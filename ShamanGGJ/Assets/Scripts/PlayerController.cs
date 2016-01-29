@@ -5,6 +5,7 @@ using Assets.Scripts;
 public class PlayerController : MonoBehaviour {
 
     public float speed = 5.0f;
+    public float m_JumpPower = 6.0f;
 
     public float camRayLength = 100.0f;
     public LayerMask floorMask; 
@@ -14,6 +15,12 @@ public class PlayerController : MonoBehaviour {
     Rigidbody playerRigidbody;
 
     private LocomotionsPlayer movController;
+
+    public Transform groundCheck;
+    float groundCheckDistance = 0.1f;
+
+    [SerializeField]
+    bool isGrounded = true;
 
     void Awake()
     {
@@ -40,7 +47,11 @@ public class PlayerController : MonoBehaviour {
         //movController.OnMouseMove();
         Animating();
         Turning();
-
+        CheckGroundStatus();
+        if (isGrounded && Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
     }
 
     void Move()
@@ -74,11 +85,6 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
-    {
-        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
-    }
-
     void Animating()
     {
         // Create a boolean that is true if either of the input axes is non-zero.
@@ -86,5 +92,30 @@ public class PlayerController : MonoBehaviour {
 
         // Tell the animator whether or not the player is walking.
         //animator.SetBool("isRunning", running);
+    }
+
+    void CheckGroundStatus()
+    {
+        RaycastHit hitInfo;
+#if UNITY_EDITOR
+        // helper to visualise the ground check ray in the scene view
+        Debug.DrawLine(groundCheck.position + (Vector3.up * 0.1f), groundCheck.position + (Vector3.up * 0.1f) + (Vector3.down * groundCheckDistance));
+#endif
+        // 0.1f is a small offset to start the ray from inside the character
+        // it is also good to note that the transform position in the sample assets is at the base of the character
+        if (Physics.Raycast(groundCheck.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, groundCheckDistance))
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
+    }
+
+    void Jump()
+    {
+        playerRigidbody.velocity = new Vector3(playerRigidbody.velocity.x, m_JumpPower, playerRigidbody.velocity.z);
+        isGrounded = false;
     }
 }

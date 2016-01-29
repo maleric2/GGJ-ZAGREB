@@ -235,6 +235,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 377768309}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &606877262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 606877263}
+  m_Layer: 0
+  m_Name: GroundChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &606877263
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 606877262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1900114649}
+  m_RootOrder: 2
 --- !u!1 &660255338
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,10 +647,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  m_JumpPower: 6
   camRayLength: 100
   floorMask:
     serializedVersion: 2
     m_Bits: 1
+  groundCheck: {fileID: 606877263}
+  isGrounded: 1
 --- !u!54 &1900114645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -696,6 +726,7 @@ Transform:
   m_Children:
   - {fileID: 377768310}
   - {fileID: 1856207222}
+  - {fileID: 606877263}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!1 &2110442559 stripped
@@ -714,10 +745,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  m_JumpPower: 12
   camRayLength: 100
   floorMask:
     serializedVersion: 2
     m_Bits: 1
+  groundCheck: {fileID: 0}
+  isGrounded: 1
 --- !u!1 &2113705193
 GameObject:
   m_ObjectHideFlags: 0
