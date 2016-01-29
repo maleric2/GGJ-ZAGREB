@@ -6,11 +6,15 @@ public abstract class DirectionDetector<T> : MonoBehaviour
 {
     public delegate void DirectionDetectorEvent(T obj, Vector3 pos);
     public static event DirectionDetectorEvent OnDetectedObject;
+    public static event DirectionDetectorEvent OnExitDetectedObject;
 
     public string tag = "";
     public float rayMaxDistance = 100f;
-    public T lastObject;
 
+    private T lastObject;
+    private Vector3 lastPosition;
+
+    public bool disableContiniousEvents = false;
     private bool doNotContiniousDetect = false;
     void Update()
     {
@@ -18,7 +22,7 @@ public abstract class DirectionDetector<T> : MonoBehaviour
     }
     public void DoLogic()
     {
-       DoLogic3D();
+        DoLogic3D();
     }
 
     /// <summary>
@@ -44,11 +48,13 @@ public abstract class DirectionDetector<T> : MonoBehaviour
         //Debug.Log("Doing Logic");
         RaycastHit hit;
         Vector3 position = (this.transform.position + Vector3.up * 0.5f);
-        Vector3 fwd = transform.TransformDirection(Vector3.forward)*rayMaxDistance;
+        Vector3 fwd = transform.TransformDirection(Vector3.forward) * rayMaxDistance;
+
+        if (disableContiniousEvents) doNotContiniousDetect = false;
 
         if (Physics.Raycast(position, fwd, out hit))
         {
-            Debug.DrawRay(position, fwd, Color.cyan, 1, false);
+            Debug.DrawRay(position, fwd, Color.cyan, 5, false);
 
             if (hit.collider != null && !doNotContiniousDetect)
             {
@@ -57,7 +63,14 @@ public abstract class DirectionDetector<T> : MonoBehaviour
             }
         }
         else
+        {
+            if (doNotContiniousDetect && lastPosition!=null && lastObject !=null)
+                if (OnExitDetectedObject != null)
+                {
+                    OnExitDetectedObject(lastObject, lastPosition);
+                }
             doNotContiniousDetect = false;
+        }
     }
 
     /// <summary>
@@ -68,8 +81,12 @@ public abstract class DirectionDetector<T> : MonoBehaviour
     /// <param name="position"></param>
     public void RegisterEvents(GameObject hitted, Vector3 position)
     {
-        if (OnDetectedObject != null) OnDetectedObject(GetObject(hitted), position);
-        lastObject = GetObject(hitted);
+        if (OnDetectedObject != null)
+        {
+            OnDetectedObject(GetObject(hitted), position);
+            lastObject = GetObject(hitted);
+            lastPosition = position;
+        }
     }
 
     /// <summary>
