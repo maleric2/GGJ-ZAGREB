@@ -77,13 +77,13 @@ namespace Assets.Scripts
         public float GetHorizontalInput()
         {
             this.movementHorizontal = Input.GetAxisRaw("Horizontal");
-            Debug.Log(movementHorizontal + " H");
+            //Debug.Log(movementHorizontal + " H");
             return movementHorizontal;
         }
         public float GetVerticalInput()
         {
             this.movementVertical = Input.GetAxisRaw("Vertical");
-            Debug.Log(movementVertical + " V");
+            //Debug.Log(movementVertical + " V");
             return movementVertical;
         }
 
