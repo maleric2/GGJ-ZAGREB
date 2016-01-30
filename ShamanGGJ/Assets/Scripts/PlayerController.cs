@@ -45,6 +45,10 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
+        
+        animator.SetFloat("Speed", playerRigidbody.velocity.magnitude);
+
+        Debug.Log(playerRigidbody.velocity.magnitude);
         Move();
         //movController.OnMouseMove();
         Animating();
@@ -58,7 +62,7 @@ public class PlayerController : MonoBehaviour {
 
     void Move()
     {
-        animator.SetFloat("Speed", movController.Speed);
+
         movController.Move();
     }
 

@@ -8,7 +8,7 @@ namespace Assets.Scripts
 {
     class LocomotionsPlayer:LocomotionsInterface
     {
-        Vector3 movement = new Vector3();
+        public Vector3 movement = new Vector3();
         public LocomotionsPlayer(GameObject gameObject)
             : base(gameObject)
         {
