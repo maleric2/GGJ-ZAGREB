@@ -10,8 +10,10 @@ public abstract class DirectionDetector<T> : MonoBehaviour
 
     public Transform directionDetector;
 
-    public string tag = "";
+    //public string tag = "";
     public float rayMaxDistance = 100f;
+
+    public LayerMask layer;
 
     private T lastObject;
     private Vector3 lastPosition;
@@ -62,7 +64,7 @@ public abstract class DirectionDetector<T> : MonoBehaviour
 
         if (enableContiniousEvents) doNotContiniousDetect = false;
 
-        if (Physics.Raycast(position, fwd, out hit, rayMaxDistance))
+        if (Physics.Raycast(position, fwd, out hit, rayMaxDistance, layer))
         {
             Debug.DrawRay(position, fwd, Color.cyan, 5, false);
 

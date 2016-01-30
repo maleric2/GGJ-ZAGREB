@@ -6,8 +6,8 @@ using System;
 public class PushAndPull : MonoBehaviour
 {
 
-    public float pushSpeed =6f;
-    public float pushDistance = 20f;
+    public float pushSpeed =10f;
+    public float pushDistance = 6f;
     public float distanceFromObject = 2f;
 
     private bool objectDetected = false;
@@ -33,22 +33,22 @@ public class PushAndPull : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && objectDetected)
             {
-                MoveObjectPush(currentObject, this.transform.forward);
+                MoveObjectPush(currentObject, this.transform.forward, false);
             }
             else if (Input.GetMouseButtonDown(1) && objectDetected)
             {
-                MoveObjectPush(currentObject, -this.transform.forward);
+                MoveObjectPush(currentObject, -this.transform.forward, true);
             }
         }
         else
         {
             if (Input.GetMouseButton(0) && objectDetected)
             {
-                MoveObject(currentObject, this.transform.forward, pushSpeed);
+                MoveObject(currentObject, this.transform.forward, pushSpeed, false);
             }
             else if (Input.GetMouseButton(1) && objectDetected)
             {
-                MoveObject(currentObject, -this.transform.forward, pushSpeed);
+                MoveObject(currentObject, -this.transform.forward, pushSpeed, true);
             }
         }
     }
@@ -82,30 +82,32 @@ public class PushAndPull : MonoBehaviour
             obj.GetComponent<OutlineController>().RemoveOutline();
     }
 
-    void MoveObjectPush(GameObject obj, Vector3 to)
+    void MoveObjectPush(GameObject obj, Vector3 to, bool pull)
     {
-        Debug.Log("PushAndPull - PushObject() ");
         Rigidbody objRb = obj.GetComponent<Rigidbody>();
 
-        Vector3 wantedPosition = to * pushDistance * pushSpeed * objRb.mass;
+        Vector3 wantedPosition = to * pushSpeed * pushDistance;
         float currDistance = Vector3.Distance(this.transform.position, obj.transform.position);
         float wantedDistance = Vector3.Distance(this.transform.position, wantedPosition);
 
-        if (wantedDistance > currDistance || currDistance > distanceFromObject)
-            objRb.AddForce(to * pushDistance * pushSpeed * objRb.mass, ForceMode.Acceleration);
+        //Debug.Log("MoveObj: distance: " + currDistance + " wantedDist: " + wantedDistance);
+        if (currDistance > distanceFromObject || !pull)
+            objRb.AddForce(to * pushSpeed * pushDistance * objRb.mass, ForceMode.Impulse);
 
     }
 
  
-    void MoveObject(GameObject obj, Vector3 target, float speed)
+    void MoveObject(GameObject obj, Vector3 target, float speed, bool pull)
     {
         Rigidbody objRb = obj.GetComponent<Rigidbody>();
 
-        Vector3 wantedPosition = target * pushDistance * pushSpeed * objRb.mass;
+        Vector3 wantedPosition = target * pushSpeed * objRb.mass;
         float currDistance = Vector3.Distance(this.transform.position, obj.transform.position);
         float wantedDistance = Vector3.Distance(this.transform.position, wantedPosition);
 
-        if (wantedDistance > currDistance || currDistance > distanceFromObject)
-            objRb.AddForce(target * pushSpeed * objRb.mass, ForceMode.Acceleration);
+
+        //Debug.Log("MoveObj: distance: " + currDistance + " wantedDist: " + wantedDistance);
+        if (currDistance > distanceFromObject || !pull)
+            objRb.AddForce(target * pushSpeed * objRb.mass, ForceMode.Force);
     }
 }
