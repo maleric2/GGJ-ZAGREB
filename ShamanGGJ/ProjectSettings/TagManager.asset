@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - Floor
+  - Ground
   - MovableObject
-  - 
-  - 
+  - Collectible
+  - Player
   - 
   - 
   - 
