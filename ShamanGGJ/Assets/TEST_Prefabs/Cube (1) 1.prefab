@@ -11,7 +11,7 @@ GameObject:
   m_Layer: 11
   m_Name: DirectionDetector
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -45,6 +45,7 @@ GameObject:
   - 114: {fileID: 11481566}
   - 114: {fileID: 11416832}
   - 114: {fileID: 11419626}
+  - 95: {fileID: 9511980}
   m_Layer: 11
   m_Name: Cube (1) 1
   m_TagString: Player
@@ -99,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.208, z: -16.94}
+  m_LocalPosition: {x: 0, y: 0.208, z: 16.92}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 425556}
@@ -191,6 +192,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 50, y: 1, z: 50}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &9511980
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145022}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11416832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,9 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a53682ad7fa8545a0811e6310d3aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushSpeed: 20
-  pushDistance: 6
-  distanceFromObject: 2
+  pushSpeed: 30
+  pushDistance: 3
+  distanceFromObject: 1
 --- !u!114 &11419626
 MonoBehaviour:
   m_ObjectHideFlags: 1
