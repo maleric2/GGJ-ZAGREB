@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour {
     private LocomotionsPlayer movController;
 
     public Transform groundCheck;
+
+    [SerializeField]
     float groundCheckDistance = 0.1f;
 
     [SerializeField]

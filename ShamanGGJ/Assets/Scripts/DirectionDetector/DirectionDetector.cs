@@ -55,7 +55,7 @@ public abstract class DirectionDetector<T> : MonoBehaviour
 
         if (enableContiniousEvents) doNotContiniousDetect = false;
 
-        if (Physics.Raycast(position, fwd, out hit))
+        if (Physics.Raycast(position,fwd, out hit, rayMaxDistance))
         {
             Debug.DrawRay(position, fwd, Color.cyan, 5, false);
 
