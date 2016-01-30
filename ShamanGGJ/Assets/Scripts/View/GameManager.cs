@@ -8,10 +8,13 @@ public class GameManager : DefaultManagerView
 {
 
     public static GameManager instance;
+    private int score = 0;
 
     public Text scoreLabel;
 
     private GameController controller;
+
+    public int maxLevelScore;
 
     void Awake()
     {
@@ -23,7 +26,7 @@ public class GameManager : DefaultManagerView
     // Use this for initialization
     void Start()
     {
-
+        scoreLabel.text = score.ToString() + " / " + maxLevelScore.ToString();
     }
 
     // Update is called once per frame
@@ -32,10 +35,10 @@ public class GameManager : DefaultManagerView
 
     }
 
-    public void SetScore(int score)
+    public void UpdateScore()
     {
-        this.controller.Score = score;
-        scoreLabel.text = this.controller.Score.ToString();
+        score++;
+        scoreLabel.text = score.ToString() + " / " + maxLevelScore.ToString() ;
 
     }
 

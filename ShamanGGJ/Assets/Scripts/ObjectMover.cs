@@ -8,21 +8,26 @@ public class ObjectMover : MonoBehaviour {
 
     public int currentWayPoint = 0;
 
+    public bool isSwitchedOn = false;
+
     void Update()
     {
-        if (transform.position != wayPoints[currentWayPoint].transform.position)
+        if (isSwitchedOn)
         {
-            transform.position = Vector3.MoveTowards(transform.position, wayPoints[currentWayPoint].transform.position, speed * Time.deltaTime);
-        }
+            if (transform.position != wayPoints[currentWayPoint].transform.position)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, wayPoints[currentWayPoint].transform.position, speed * Time.deltaTime);
+            }
 
-        if (transform.position == wayPoints[currentWayPoint].transform.position)
-        {
-            currentWayPoint += 1;
-        }
+            if (transform.position == wayPoints[currentWayPoint].transform.position)
+            {
+                currentWayPoint += 1;
+            }
 
-        if (currentWayPoint >= wayPoints.Length)
-        {
-            currentWayPoint = 0;
+            if (currentWayPoint >= wayPoints.Length)
+            {
+                currentWayPoint = 0;
+            }
         }
     }
 

@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour {
 
     void Move()
     {
+        animator.SetFloat("Speed", movController.Speed);
         movController.Move();
     }
 

@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11496868}
   m_Layer: 9
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: MovableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150410}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -0.114260435, y: 0.26999998, z: -12.972405}
+  m_LocalPosition: {x: -0.114260435, y: 0.26999998, z: -10.97}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}

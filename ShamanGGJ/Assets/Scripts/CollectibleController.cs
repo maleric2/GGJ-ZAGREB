@@ -21,7 +21,7 @@ public class CollectibleController : MonoBehaviour {
 
         if(!isCollected && collider.gameObject.CompareTag("Player")){
             isCollected = true;
-            //GameManager.instance.score++;
+            GameManager.instance.UpdateScore();
             collectedParticle.SetActive(true);
             collectedParticle.transform.SetParent(null);
             Destroy(gameObject);
