@@ -1449,6 +1449,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11416832, guid: dfd3c3e1e66d4ae468f25a37202e76ad, type: 2}
+      propertyPath: pushSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416832, guid: dfd3c3e1e66d4ae468f25a37202e76ad, type: 2}
+      propertyPath: pushDistance
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419626, guid: dfd3c3e1e66d4ae468f25a37202e76ad, type: 2}
+      propertyPath: layer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfd3c3e1e66d4ae468f25a37202e76ad, type: 2}
   m_IsPrefabParent: 0
