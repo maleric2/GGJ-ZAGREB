@@ -50,12 +50,19 @@ public abstract class DirectionDetector<T> : MonoBehaviour
     {
         //Debug.Log("Doing Logic");
         RaycastHit hit;
-        Vector3 position = directionDetector.position;
+
+        Vector3 position;
+
+        if (directionDetector != null)
+            position = directionDetector.position;
+        else
+            position = this.transform.position + Vector3.up * 0.4f;
+
         Vector3 fwd = transform.TransformDirection(Vector3.forward) * rayMaxDistance;
 
         if (enableContiniousEvents) doNotContiniousDetect = false;
 
-        if (Physics.Raycast(position, fwd, out hit))
+        if (Physics.Raycast(position, fwd, out hit, rayMaxDistance))
         {
             Debug.DrawRay(position, fwd, Color.cyan, 5, false);
 
