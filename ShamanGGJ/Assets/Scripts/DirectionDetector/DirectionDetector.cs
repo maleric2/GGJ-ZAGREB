@@ -8,6 +8,8 @@ public abstract class DirectionDetector<T> : MonoBehaviour
     public static event DirectionDetectorEvent OnDetectedObject;
     public static event DirectionDetectorEvent OnExitDetectedObject;
 
+    public Transform directionDetector;
+
     public string tag = "";
     public float rayMaxDistance = 100f;
 
@@ -48,7 +50,7 @@ public abstract class DirectionDetector<T> : MonoBehaviour
     {
         //Debug.Log("Doing Logic");
         RaycastHit hit;
-        Vector3 position = (this.transform.position + Vector3.up * 0.5f);
+        Vector3 position = directionDetector.position;
         Vector3 fwd = transform.TransformDirection(Vector3.forward) * rayMaxDistance;
 
         if (enableContiniousEvents) doNotContiniousDetect = false;
