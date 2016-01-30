@@ -41,9 +41,19 @@ public class GameManager : DefaultManagerView
         scoreLabel.text = score.ToString() + " / " + maxLevelScore.ToString() ;
 
     }
+    public void AddScore(int score)
+    {
+        this.controller.Score += score;
+        if(scoreLabel!=null) scoreLabel.text = this.controller.Score.ToString();
+
+    }
 
     public override void OnBackButton()
     {
         throw new NotImplementedException();
+    }
+    public void OnProperties()
+    {
+        //
     }
 }
