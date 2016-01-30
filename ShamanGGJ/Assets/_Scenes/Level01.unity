@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6508e46725b714446b0fcdb2b50362d5, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1013,6 +1013,10 @@ Prefab:
       propertyPath: movingDoor2
       value: 
       objectReference: {fileID: 2070677076}
+    - target: {fileID: 11484128, guid: 42a9578126520634b87b91644cb344b7, type: 2}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42a9578126520634b87b91644cb344b7, type: 2}
   m_IsPrefabParent: 0
@@ -2224,6 +2228,10 @@ Prefab:
       propertyPath: movingDoor2
       value: 
       objectReference: {fileID: 695960608}
+    - target: {fileID: 11484128, guid: 42a9578126520634b87b91644cb344b7, type: 2}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42a9578126520634b87b91644cb344b7, type: 2}
   m_IsPrefabParent: 0
@@ -3541,12 +3549,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1585768865}
-  m_LocalRotation: {x: 0.23800384, y: -0.00083771494, z: 0.00028403034, w: 0.9712639}
-  m_LocalPosition: {x: 0.082304984, y: 1.7265983, z: -19.15226}
+  m_LocalRotation: {x: 0.25713113, y: -0.092853844, z: 0.02502, w: 0.96157986}
+  m_LocalPosition: {x: 0.90239024, y: 2.7315474, z: 13.635591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!114 &1585768871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3559,7 +3567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 185918780}
-  distance: 2
+  distance: 4
   height: 5
   rotationDamping: 0
   heightDamping: 0
@@ -4647,7 +4655,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!4 &2136978846 stripped
 Transform:
   m_PrefabParentObject: {fileID: 436288, guid: fd671b562523baf4880372a54e2d307d, type: 2}
