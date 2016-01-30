@@ -46,10 +46,10 @@ GameObject:
   - 33: {fileID: 3367186}
   - 23: {fileID: 2329206}
   - 95: {fileID: 9518570}
-  - 64: {fileID: 6431386}
   - 135: {fileID: 13522140}
   - 114: {fileID: 11489420}
   - 114: {fileID: 11439938}
+  - 65: {fileID: 6557256}
   m_Layer: 0
   m_Name: PlatformSwitch
   m_TagString: Untagged
@@ -129,8 +129,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116478}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.22, y: 0.47, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 2, y: 0.5, z: 10}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_Children:
   - {fileID: 471316}
@@ -232,18 +232,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6431386
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124416}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 34dbb946159c1b34a8b05477c46a18ee, type: 3}
 --- !u!65 &6517920
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -256,6 +244,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6557256
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124416}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.31318715, y: 0.25176814, z: 0.82479554}
+  m_Center: {x: -0.0033264272, y: 0.041295014, z: 0.40899807}
 --- !u!95 &9518570
 Animator:
   serializedVersion: 3
@@ -314,6 +314,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingPlatform: {fileID: 11449358}
+  movingDoor: {fileID: 0}
+  movingDoor2: {fileID: 0}
 --- !u!135 &13522140
 SphereCollider:
   m_ObjectHideFlags: 1

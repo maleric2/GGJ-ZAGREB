@@ -20,7 +20,7 @@ public class SwitchController : MonoBehaviour {
 	
 	}
 
-    void OnTriggerEnter(Collider collider)
+    void OnTriggerStay(Collider collider)
     {
         if(collider.gameObject.CompareTag("Player") ||  collider.gameObject.CompareTag("MovableObject")){
             if(movingPlatform != null) movingPlatform.isSwitchedOn = true;
@@ -39,4 +39,5 @@ public class SwitchController : MonoBehaviour {
             if (movingDoor2 != null) movingDoor2.isSwitchedOn2 = false;
         }
     }
+
 }

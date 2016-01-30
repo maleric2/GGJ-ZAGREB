@@ -1013,10 +1013,6 @@ Prefab:
       propertyPath: movingDoor2
       value: 
       objectReference: {fileID: 2070677076}
-    - target: {fileID: 11484128, guid: 42a9578126520634b87b91644cb344b7, type: 2}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42a9578126520634b87b91644cb344b7, type: 2}
   m_IsPrefabParent: 0
@@ -2212,25 +2208,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 430594, guid: 42a9578126520634b87b91644cb344b7, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 430594, guid: 42a9578126520634b87b91644cb344b7, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 146266, guid: 42a9578126520634b87b91644cb344b7, type: 2}
-      propertyPath: m_Name
-      value: MovingDoor (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 11458348, guid: 42a9578126520634b87b91644cb344b7, type: 2}
       propertyPath: movingDoor2
       value: 
       objectReference: {fileID: 695960608}
-    - target: {fileID: 11484128, guid: 42a9578126520634b87b91644cb344b7, type: 2}
-      propertyPath: speed
-      value: 5
+    - target: {fileID: 146266, guid: 42a9578126520634b87b91644cb344b7, type: 2}
+      propertyPath: m_Name
+      value: MovingDoor (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42a9578126520634b87b91644cb344b7, type: 2}
@@ -3792,11 +3776,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 459582, guid: dfd3c3e1e66d4ae468f25a37202e76ad, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.208
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 459582, guid: dfd3c3e1e66d4ae468f25a37202e76ad, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 16.92
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 459582, guid: dfd3c3e1e66d4ae468f25a37202e76ad, type: 2}
       propertyPath: m_LocalRotation.x
