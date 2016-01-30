@@ -158,6 +158,7 @@ GameObject:
   - 65: {fileID: 701386973}
   - 23: {fileID: 701386972}
   - 54: {fileID: 701386971}
+  - 114: {fileID: 701386976}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -190,7 +191,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d8c7c8944fd333c458c2d4f566e21a71, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -237,6 +238,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &701386976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 701386970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be8a42e3182a4443aa24d0b028d61d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOutlined: 0
 --- !u!1 &1021978148
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tag: 
   rayMaxDistance: 100
-  disableContiniousEvents: 0
+  enableContiniousEvents: 0
 --- !u!114 &1351936866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,8 +365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a53682ad7fa8545a0811e6310d3aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushSpeed: 0.2
-  pushDistance: 1
+  fastPushInterval: 0.3
+  pushSpeed: 0.02
+  pushDistance: 4
 --- !u!1 &1530997532
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +513,7 @@ GameObject:
   - 65: {fileID: 1735651153}
   - 23: {fileID: 1735651152}
   - 54: {fileID: 1735651156}
+  - 114: {fileID: 1735651157}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -516,7 +531,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d8c7c8944fd333c458c2d4f566e21a71, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -578,3 +593,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1735651157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1735651151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be8a42e3182a4443aa24d0b028d61d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOutlined: 0

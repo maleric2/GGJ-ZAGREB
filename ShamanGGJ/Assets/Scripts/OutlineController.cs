@@ -18,14 +18,14 @@ public class OutlineController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (isOutlined)
+        /*if (isOutlined)
         {
             AddOutline();
         }
         else
         {
             RemoveOutline();
-        }
+        }*/
 	}
 
 

@@ -14,7 +14,8 @@ public abstract class DirectionDetector<T> : MonoBehaviour
     private T lastObject;
     private Vector3 lastPosition;
 
-    public bool disableContiniousEvents = false;
+    [Tooltip("Disable by default if you dont know how it will work")]
+    public bool enableContiniousEvents = false;
     private bool doNotContiniousDetect = false;
     void Update()
     {
@@ -50,7 +51,7 @@ public abstract class DirectionDetector<T> : MonoBehaviour
         Vector3 position = (this.transform.position + Vector3.up * 0.5f);
         Vector3 fwd = transform.TransformDirection(Vector3.forward) * rayMaxDistance;
 
-        if (disableContiniousEvents) doNotContiniousDetect = false;
+        if (enableContiniousEvents) doNotContiniousDetect = false;
 
         if (Physics.Raycast(position, fwd, out hit))
         {
